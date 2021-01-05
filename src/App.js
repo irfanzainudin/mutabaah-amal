@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 import Home from './pages/Home';
+import Chatroom from './pages/Chatroom';
 import './App.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       </div>
       <Switch>
         <Route exact path="/" component={Home}/>
+        <Route path="/chatroom" component={Chatroom}/>
       </Switch>
     </Router>
   );
