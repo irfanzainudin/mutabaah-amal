@@ -12,7 +12,7 @@ function App() {
     <Router>
       <div className="Navbar">
         <div className="Navbar-header">
-          <h3 className="Home-link">Mutabaah Amal</h3>
+          <Link to="/"><h3 className="Home-link">Mutabaah Amal</h3></Link>
           <button><FontAwesomeIcon icon={faUserCircle} className="User-icon" /></button>
         </div>
       </div>
