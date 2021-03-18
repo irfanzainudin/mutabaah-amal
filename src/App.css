@@ -14,6 +14,10 @@ a {
   padding: 0.5rem .5rem;
 } */
 
+button:hover {
+  color: greenyellow;
+}
+
 ul {
   list-style-type: unset;
 }
@@ -53,9 +57,18 @@ ul {
   margin-left: 1rem;
 }
 
+.home-link:hover {
+  color: greenyellow;
+}
+
 #login-btn {
   padding: .3rem 1rem;
   border: solid 2px white;
+}
+
+#login-btn:hover {
+  color: greenyellow;
+  border: solid 2px greenyellow;
 }
 
 .user-icon {

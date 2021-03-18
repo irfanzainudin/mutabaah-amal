@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { HashRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { faSign, faSignInAlt, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 // import admin from 'firebase-admin';
@@ -31,7 +31,7 @@ function App() {
       if (user) {
         setIsUserSignedIn(<button><Link to="/profile"><FontAwesomeIcon icon={faUserCircle} className="user-icon" /></Link></button>);
       } else {
-          setIsUserSignedIn(<h3 id="login-btn"><Link to="/login">Login</Link></h3>);
+          setIsUserSignedIn(<Link to="/login"><h3 id="login-btn"><FontAwesomeIcon icon={faSignInAlt}/> Login</h3></Link>);
       }
     })
   }, []);
@@ -54,7 +54,11 @@ function App() {
           </div>
         </Route>
         <Route path="/profile" component={Profile}/>
-        <Route path="/login" component={Login}/>
+        <Route path="/login">
+          <div className="flex-container">
+            <Login />
+          </div>
+        </Route>
       </Switch>
     </Router>
   );
