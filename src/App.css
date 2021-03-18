@@ -3,7 +3,7 @@ a {
   color: white;
 }
 
-button {
+/* button {
   cursor: pointer;
   font-size: 2rem;
   border: none;
@@ -12,7 +12,7 @@ button {
   background-color: #008080;
   outline: none;
   padding: 0.5rem .5rem;
-}
+} */
 
 ul {
   list-style-type: unset;
@@ -63,23 +63,6 @@ ul {
   margin-right: 1rem;
 }
 
-.add-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.add-buttons {
-  min-width: 7vw;
-  margin: 0 1rem;
-}
-
-.user-image {
-  display: block;
-  margin: auto;
-  border-radius: 50%;
-}
-
 @media screen and (max-width: 1000px) {
   button {
     cursor: pointer;
@@ -124,23 +107,6 @@ ul {
   .user-icon {
     font-size: 2rem;
     margin-right: 1rem;
-  }
-  
-  .add-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .add-buttons {
-    min-width: 20vw;
-    margin: 0 1rem;
-  }
-  
-  .user-image {
-    display: block;
-    margin: auto;
-    border-radius: 50%;
   }
 }
 

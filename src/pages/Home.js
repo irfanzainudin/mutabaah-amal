@@ -3,7 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import { v4 as uuidv4 } from 'uuid';
 
+// components
 import Amal from '../components/Amal';
+
+// stylesheets
+import './Home.css';
 
 var placeholder_amalan = [
   {
@@ -59,15 +63,13 @@ function Home() {
 
   return (
     <div className="container">
-      {/* <h1>Home</h1> */}
-      {/* <img src='http://unsplash.it/200/200?random' alt='placeholder image' className="User-image"/> */}
       <div className="add-container">
         <button className="add-buttons" onClick={() => addAmal()}>
           <FontAwesomeIcon icon={faPlusCircle} />
         </button>
       </div>
       {
-        amalan.length == 0 ? <h3 className="center">You're all caught up, alhamdulillah!</h3> : amalan.map((item) => {
+        amalan.length === 0 ? <h3 className="center">You're all caught up, alhamdulillah!</h3> : amalan.map((item) => {
           return (
             <Amal item={item} checkDone={checkDone} />
           )

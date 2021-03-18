@@ -1,0 +1,31 @@
+.add-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-buttons {
+  min-width: 7vw;
+  margin: 0 1rem;
+  cursor: pointer;
+  font-size: 2rem;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: #006060;
+  outline: none;
+  padding: 0.5rem .5rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .add-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .add-buttons {
+    min-width: 20vw;
+    margin: 0 1rem;
+  }
+}

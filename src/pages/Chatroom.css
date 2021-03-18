@@ -1,16 +1,16 @@
 .chatroom-container {
   margin: 1rem;
   width: 30vw;
-  min-height: 80vh;
+  min-height: 60vh;
 
   border: solid 1px #008080;
-  border-radius: 10px;
+  border-radius: 1rem;
 }
 
 .chatroom-header {
-  background-color: #008080;
-  border-radius: 7px 7px 0 0;
-  padding: 0.3rem 1rem;
+  background-color: #006060;
+  border-radius: .8rem .8rem 0 0;
+  padding: 1rem;
   text-align: center;
   color: white;
 
@@ -19,15 +19,144 @@
   justify-content: space-between;
 }
 
+.chatroom-header .go-back:hover, .mentee-dp:hover {
+  cursor: pointer;
+}
+
 .chatroom-body {
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.chats {
+  box-sizing: content-box;
+  overflow-y: scroll;
+  padding: 0 .5rem;
+  margin: 0 1rem 0 0;
   width: 100%;
   height: 100%;
 }
 
-.chats {
-  box-sizing: border-box;
-  overflow-y: auto;
-  padding: 0 1rem;
-  margin: 1rem 0 0;
+.dummy-div {
+  float: left;
+  clear: both;
+  color: black;
+}
+
+.new-chat {
+  background-color: #006060;
+  border-radius: 0 0 .8rem .8rem;
+  width: 100%;
   height: 100%;
+  box-sizing: border-box;
+  padding: .5rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-chat {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 20px;
+  padding: .5rem 1rem;
+  margin-right: .5rem;
+  background-color: #008080;
+  color: white;
+}
+
+.input-chat:focus {
+  outline: none;
+}
+
+.input-chat::placeholder {
+  color: white;
+}
+
+.submit-chat {
+  padding: 0;
+  font-size: 1.5em;
+  text-align: center;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: #006060;
+  outline: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .chatroom-container {
+    margin: 0;
+    width: 100vw;
+    min-height: fit-content;
+  
+    border: none;
+    border-radius: 0;
+  }
+
+  .chatroom-header {
+    background-color: #006060;
+    border-radius: 0;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+  
+  .chatroom-header .go-back:hover, .mentee-dp:hover {
+    cursor: pointer;
+  }
+  
+  .chatroom-body {
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .chats {
+    box-sizing: content-box;
+    overflow-y: scroll;
+    padding: 0 .5rem;
+    width: 95%;
+    height: 100%;
+  }
+
+  .dummy-div {
+    float: left;
+    clear: both;
+    color: black;
+  }
+  
+  .new-chat {
+    background-color: #006060;
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: .5rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    position: sticky;
+    bottom: 0;
+    z-index: 5;
+  }
 }

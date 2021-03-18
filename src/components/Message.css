@@ -4,7 +4,7 @@
   border-radius: 10px;
   
   padding: 0 1rem;
-  margin: .5rem 0;
+  margin: 2px 0;
   max-width: 15vw;
 
   position: relative;
@@ -19,4 +19,19 @@
 .right {
   float: right;
   clear: both;
+}
+
+@media screen and (max-width: 1000px) {
+  .chat {
+    color: white;
+    background-color: #008080;
+    border-radius: 10px;
+    
+    padding: 0 1rem;
+    margin: .5rem 0;
+    max-width: 45vw;
+  
+    position: relative;
+    list-style: none;
+  }
 }

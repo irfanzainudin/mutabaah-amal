@@ -1,7 +1,6 @@
 .amal-container {
   color: white;
-  background-color: #008080;
-  border: solid 1px #008080;
+  background-color: #006060;
   border-radius: 10px;
   margin: 1rem auto;
   max-width: 25vw;
@@ -17,24 +16,29 @@
   justify-content: space-between;
 }
 
+.amal-header button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: #006060;
+  outline: none;
+  padding: 0.5rem .5rem;
+}
+
 .amal-title {
   margin-left: 1rem;
 }
 
 .amal-body {
-  /* color: #008080; */
-  /* display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center; */
   padding-left: 1rem;
 }
 
 @media screen and (max-width: 1000px) {
   .amal-container {
     color: white;
-    background-color: #008080;
-    border: solid 1px #008080;
+    background-color: #006060;
     border-radius: 10px;
     margin: 1rem auto;
     max-width: 100vw;
@@ -55,11 +59,6 @@
   }
 
   .amal-body {
-    /* color: #008080; */
-    /* display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center; */
     padding-left: 1rem;
   }
 }

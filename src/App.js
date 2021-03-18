@@ -24,14 +24,14 @@ if (!firebase.apps.length) {
 // const db = admin.firestore();
 
 function App() {
-  const [isThereAnyUserSignedIn, setIsThereAnyUserSignedIn] = useState();
+  const [isUserSignedIn, setIsUserSignedIn] = useState();
   
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        setIsThereAnyUserSignedIn(<button><Link to="/profile"><FontAwesomeIcon icon={faUserCircle} className="user-icon" /></Link></button>);
+        setIsUserSignedIn(<button><Link to="/profile"><FontAwesomeIcon icon={faUserCircle} className="user-icon" /></Link></button>);
       } else {
-          setIsThereAnyUserSignedIn(<h3 id="login-btn"><Link to="/login">Login</Link></h3>);
+          setIsUserSignedIn(<h3 id="login-btn"><Link to="/login">Login</Link></h3>);
       }
     })
   }, []);
@@ -42,7 +42,7 @@ function App() {
         <div className="navbar-header">
           <Link to="/"><h3 className="home-link">Mutabaah Amal</h3></Link>
           {
-            isThereAnyUserSignedIn
+            isUserSignedIn
           }
         </div>
       </div>
