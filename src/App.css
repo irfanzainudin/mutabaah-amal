@@ -71,9 +71,30 @@ ul {
   border: solid 2px greenyellow;
 }
 
+.user-actions-container {
+  width: 15vw;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .user-icon {
   font-size: 2rem;
-  margin-right: 1rem;
+  cursor: pointer;
+  border: none;
+  color: #ffffff;
+  background-color: #008080;
+  padding: 0.5rem;
+}
+
+#sign-out-btn {
+  cursor: pointer;
+}
+
+#sign-out-btn:hover {
+  color: greenyellow;
 }
 
 @media screen and (max-width: 1000px) {
@@ -115,11 +136,6 @@ ul {
   #login-btn {
     padding: .3rem 1rem;
     border: solid 2px white;
-  }
-  
-  .user-icon {
-    font-size: 2rem;
-    margin-right: 1rem;
   }
 }
 

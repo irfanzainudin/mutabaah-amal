@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { HashRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSign, faSignInAlt, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { faSign, faSignInAlt, faSignOutAlt, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 // import admin from 'firebase-admin';
@@ -25,13 +25,32 @@ if (!firebase.apps.length) {
 
 function App() {
   const [isUserSignedIn, setIsUserSignedIn] = useState();
+
+  const userSignout = () => {
+    firebase.auth().signOut()
+    .then(() => {
+      console.log("logged out");
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  }
   
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        setIsUserSignedIn(<button><Link to="/profile"><FontAwesomeIcon icon={faUserCircle} className="user-icon" /></Link></button>);
+        setIsUserSignedIn(
+          <div className="user-actions-container">
+            <Link to="/profile">
+              <button className="user-icon">
+                <FontAwesomeIcon icon={faUserCircle} />
+              </button>
+            </Link>
+            <h3 id="sign-out-btn" onClick={() => userSignout()}><FontAwesomeIcon icon={faSignOutAlt} /> Sign Out</h3>
+          </div>
+        );
       } else {
-          setIsUserSignedIn(<Link to="/login"><h3 id="login-btn"><FontAwesomeIcon icon={faSignInAlt}/> Login</h3></Link>);
+        setIsUserSignedIn(<Link to="/login"><h3 id="login-btn"><FontAwesomeIcon icon={faSignInAlt}/> Login</h3></Link>);
       }
     })
   }, []);
@@ -56,7 +75,7 @@ function App() {
         <Route path="/profile" component={Profile}/>
         <Route path="/login">
           <div className="flex-container">
-            <Login />
+            <Login firebase={firebase} />
           </div>
         </Route>
       </Switch>
