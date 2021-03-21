@@ -1,0 +1,26 @@
+.stats-container {
+  flex: 1;
+
+  width: 20vw;
+  padding: 1rem;
+
+  border: solid 1px #008080;
+  border-radius: 2rem;
+  background-color: #006060;
+}
+
+.stats-container span {
+  color: white;
+}
+
+.stats-title {
+  display: block;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .stats-container {
+    width: 70vw;
+  }
+}

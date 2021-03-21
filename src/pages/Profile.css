@@ -1,0 +1,21 @@
+.user-image {
+  width: 300px;
+  height: 300px;
+
+  object-fit: cover;
+  object-position: 0 0;
+  border-radius: 50%;
+}
+
+.user-stats {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1000px) {
+  .user-stats {
+    flex-direction: column;
+  }
+}
