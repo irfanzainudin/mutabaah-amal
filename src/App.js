@@ -25,20 +25,11 @@ if (!firebase.apps.length) {
 
 function App() {
   const [isUserSignedIn, setIsUserSignedIn] = useState();
-
-  const userSignout = () => {
-    firebase.auth().signOut()
-    .then(() => {
-      console.log("logged out");
-    })
-    .catch((error) => {
-      console.log(error);
-    })
-  }
   
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
+        console.log(user);
         setIsUserSignedIn(
           <Link to="/profile">
             <button className="user-icon">
@@ -72,7 +63,7 @@ function App() {
         <Route path="/profile" component={Profile}/>
         <Route path="/login">
           <div className="flex-container">
-            <Login firebase={firebase} />
+            <Login />
           </div>
         </Route>
       </Switch>

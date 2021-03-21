@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { Redirect, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 
 // stylesheets
@@ -16,7 +18,7 @@ function LoginNotice({ notice }) {
   )
 }
 
-function Login({ firebase }) {
+function Login() {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const [user, setUser] = useState();

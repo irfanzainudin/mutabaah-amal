@@ -1,4 +1,9 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 // our own components
 import Stats from '../components/Stats';
@@ -10,6 +15,19 @@ import dp from '../images/pexels-photo-220453.jpeg';
 import "./Profile.css";
 
 function Profile() {
+  const history = useHistory();
+
+  const userSignout = () => {
+    firebase.auth().signOut()
+    .then(() => {
+      console.log("logged out");
+      history.push("/");
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  }
+
   return (
     <div className="flex-container container">
       <img className="user-image" src={dp} />
@@ -18,6 +36,9 @@ function Profile() {
         <Stats title="Amals completed" stats="14 amals"/>
         <Stats title="Days of Istiqamah" stats="2 days"/>
       </div>
+      <button id="sign-out-btn" onClick={() => userSignout()}>
+        <FontAwesomeIcon icon={faSignOutAlt} /> Sign Out
+      </button>
       {/* <h1>Profile</h1> */}
       {/* <h3 id="sign-out-btn" onClick={() => userSignout()}><FontAwesomeIcon icon={faSignOutAlt} /> Sign Out</h3> */}
     </div>

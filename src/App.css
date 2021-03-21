@@ -103,14 +103,6 @@ ul {
   padding: 0.5rem;
 }
 
-#sign-out-btn {
-  cursor: pointer;
-}
-
-#sign-out-btn:hover {
-  color: greenyellow;
-}
-
 @media screen and (max-width: 1000px) {
   /* button {
     cursor: pointer;
