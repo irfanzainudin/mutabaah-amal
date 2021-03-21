@@ -40,14 +40,11 @@ function App() {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         setIsUserSignedIn(
-          <div className="user-actions-container">
-            <Link to="/profile">
-              <button className="user-icon">
-                <FontAwesomeIcon icon={faUserCircle} />
-              </button>
-            </Link>
-            <h3 id="sign-out-btn" onClick={() => userSignout()}><FontAwesomeIcon icon={faSignOutAlt} /> Sign Out</h3>
-          </div>
+          <Link to="/profile">
+            <button className="user-icon">
+              <FontAwesomeIcon icon={faUserCircle} />
+            </button>
+          </Link>
         );
       } else {
         setIsUserSignedIn(<Link to="/login"><h3 id="login-btn"><FontAwesomeIcon icon={faSignInAlt}/> Login</h3></Link>);
