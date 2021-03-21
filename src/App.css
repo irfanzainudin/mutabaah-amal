@@ -37,6 +37,20 @@ ul {
   text-align: center;
 }
 
+.medium-text {
+  font-size: 1.2rem;
+}
+
+.block-text {
+  display: block;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+/* components */
+
 .navbar {
   max-width: 100vw;
   text-align: center;
@@ -98,7 +112,7 @@ ul {
 }
 
 @media screen and (max-width: 1000px) {
-  button {
+  /* button {
     cursor: pointer;
     font-size: 2rem;
     border: none;
@@ -107,11 +121,13 @@ ul {
     background-color: #008080;
     outline: none;
     padding: 0.5rem .5rem;
-  }
+  } */
   
   .container {
     margin: 1rem;
   }
+
+  /* components */
   
   .navbar {
     max-width: 100vw;
