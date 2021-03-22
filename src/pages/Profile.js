@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
@@ -14,7 +14,22 @@ import "./Profile.css";
 
 function Profile() {
   const history = useHistory();
-  const { logout } = useAuth();
+  const { logout, currentUser, getUsers } = useAuth();
+  const [username, setUsername] = useState("");
+
+  useEffect(async () => {
+    try {
+      const users = await getUsers();
+      users.forEach((doc) => {
+        const user = doc.data();
+        if (user.email === currentUser.email) {
+          setUsername(user.firstName + ' ' + user.lastName);
+        }
+      })
+    } catch {
+      console.log("Failed to query db");
+    }
+  }, []);
 
   const userSignout = async () => {
     await logout();
@@ -24,7 +39,7 @@ function Profile() {
   return (
     <div className="flex-container container">
       <img className="user-image" src={dp} />
-      <h1>User People</h1>
+      <h1>{ username ? username : "User's name"}</h1>
       <button id="sign-out-btn" onClick={() => userSignout()}>
         <FontAwesomeIcon icon={faSignOutAlt} /> Sign Out
       </button>
