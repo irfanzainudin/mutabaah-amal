@@ -1,3 +1,10 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .add-container {
   display: flex;
   align-items: center;
@@ -17,6 +24,15 @@
   padding: 0.5rem .5rem;
 }
 
+.user-stats {
+  width: 40vw;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
 @media screen and (max-width: 1000px) {
   .add-container {
     display: flex;
@@ -27,5 +43,9 @@
   .add-buttons {
     min-width: 20vw;
     margin: 0 1rem;
+  }
+
+  .user-stats {
+    flex-direction: column;
   }
 }

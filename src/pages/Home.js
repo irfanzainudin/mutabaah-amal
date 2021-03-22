@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 // components
 import Amal from '../components/Amal';
+import Stats from '../components/Stats';
 
 // stylesheets
 import './Home.css';
@@ -62,7 +63,11 @@ function Home() {
   }
 
   return (
-    <div className="container">
+    <div className="container home-container">
+      <div className="user-stats">
+        <Stats title="Amals completed" stats="14 amals"/>
+        <Stats title="Days of Istiqamah" stats="2 days"/>
+      </div>
       <div className="add-container">
         <button className="add-buttons" onClick={() => addAmal()}>
           <FontAwesomeIcon icon={faPlusCircle} />

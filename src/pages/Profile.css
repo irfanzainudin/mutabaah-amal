@@ -7,13 +7,6 @@
   border-radius: 50%;
 }
 
-.user-stats {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-
 #sign-out-btn {
   font-size: 1rem;
 
@@ -28,10 +21,4 @@
 #sign-out-btn:hover {
   cursor: pointer;
   color: greenyellow;
-}
-
-@media screen and (max-width: 1000px) {
-  .user-stats {
-    flex-direction: column;
-  }
 }

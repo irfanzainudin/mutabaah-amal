@@ -5,8 +5,8 @@
   padding: 1rem;
 
   border: solid 1px #008080;
-  border-radius: 2rem;
-  background-color: #006060;
+  border-radius: 10px;
+  background-color: #008080;
 }
 
 .stats-container span {

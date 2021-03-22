@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { HashRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSignInAlt, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 // our own components
 import PrivateRoute from './components/PrivateRoute';
@@ -20,20 +20,6 @@ import './App.css';
 
 function App() {
   const [isUserSignedIn, setIsUserSignedIn] = useState();
-  
-  // useEffect(() => {
-  //   if (currentUser) {
-  //     setIsUserSignedIn(
-  //       <Link to="/profile">
-  //         <button className="user-icon">
-  //           <FontAwesomeIcon icon={faUserCircle} />
-  //         </button>
-  //       </Link>
-  //     );
-  //   } else {
-  //     setIsUserSignedIn(<Link to="/login"><h3 id="login-btn"><FontAwesomeIcon icon={faSignInAlt}/> Login</h3></Link>);
-  //   }
-  // }, []);
 
   return (
     <Router>
