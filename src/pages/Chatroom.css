@@ -1,5 +1,6 @@
 .chatroom-container {
-  margin: 1rem;
+  margin: auto;
+  margin-top: 1rem;
   width: 30vw;
   min-height: 60vh;
 

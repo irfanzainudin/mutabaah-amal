@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import firebase from 'firebase/app';
-import 'firebase/auth';
 
+// our own components
+import { useAuth } from '../contexts/AuthContext';
 
 // stylesheets
 import './Login.css';
@@ -28,17 +28,16 @@ function Login() {
     </h4>
   );
   var history = useHistory();
+  const { login } = useAuth();
 
-  const userLogin = (e) => {
+  const userLogin = async (e) => {
     e.preventDefault();
-    firebase.auth().signInWithEmailAndPassword(userEmail, userPassword)
-    .then((userCreds) => {
-      setUser(userCreds.user);
-      history.push("/"); // redirects to home page
-    })
-    .catch((error) => {
-      setNotice(<LoginNotice notice={error.message} />); // give users a nice-looking notice
-    })
+    try {
+      await login(userEmail, userPassword);
+      history.push("/");
+    } catch {
+      console.log("Failed to log in");
+    }
   }
 
   const handleEmailChange = (e) => {
@@ -62,7 +61,7 @@ function Login() {
         <button type="submit" className="login-submit"><FontAwesomeIcon icon={faLock} /> Verify</button>
       </form>
       { notice }
-      <Link to="/"><h4 id="forgot-password"><u>Forgot your password?</u></h4></Link>
+      {/* <Link to="/"><h4 id="forgot-password"><u>Forgot your password?</u></h4></Link> */}
     </div>
   )
 }

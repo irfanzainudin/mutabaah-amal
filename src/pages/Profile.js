@@ -2,10 +2,9 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
-import firebase from 'firebase/app';
-import 'firebase/auth';
 
 // our own components
+import { useAuth } from '../contexts/AuthContext';
 import Stats from '../components/Stats';
 
 // images
@@ -16,16 +15,11 @@ import "./Profile.css";
 
 function Profile() {
   const history = useHistory();
+  const { logout } = useAuth();
 
-  const userSignout = () => {
-    firebase.auth().signOut()
-    .then(() => {
-      console.log("logged out");
-      history.push("/");
-    })
-    .catch((error) => {
-      console.log(error);
-    })
+  const userSignout = async () => {
+    await logout();
+    history.push("/login");
   }
 
   return (
